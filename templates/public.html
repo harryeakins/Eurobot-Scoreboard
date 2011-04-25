@@ -3,7 +3,7 @@
 
 {% block content %} 
 <h1> LIVE EUROBOT SCORES! </h1>
-<p>
+
 {% if notices %}
 <ul>
     {% for notice in notices %}
@@ -11,6 +11,8 @@
     {% endfor %}
 </ul>
 {% endif %}
-<img src="/images/ICRS-logo.png" width="25%" />
+<p>
+<img src="/images/ICRS-logo.png" width="25%" alt="ICRS Logo"/>
+</p>
 {% endblock %}
 

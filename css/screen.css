@@ -1,0 +1,11 @@
+body {
+    background-color: #EEE;
+    font-family: verdana, arial;
+}
+div#footer {
+    background-color: #CCC;
+}
+div#content h1 {
+    color: red;
+}
+

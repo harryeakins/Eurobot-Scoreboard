@@ -1,0 +1,38 @@
+Assumptions: This app, for now, does one competition only. To hold another one
+the database should be deleted and everything started again. This might
+change in the future.
+
+= Live Public Scoreboard =
+Purpose: To show anyone interested and connected to the internet what
+the current scores are in this competition.
+
+Context:
+competition_active - flag to say whether or not the competition is actually taking place
+current_red_team, current_blue_team - teams currently playing
+current_scoreboard - list of team names and scores, in descending score order
+the_time
+
+= Pre-Competition Referee Interface = 
+Purpose: Provide referee with interface to register teams, mark down whether
+         the teams have passed homologation or not, and generate the competition.
+
+Context:
+registration_form: djangoforms object. If last registration failed, this should contain with any data 
+        the data from the failed submission. Sumbission sends data to the same url as currently on, 
+        with the key-value pair "type" = "reg_team".
+teams: list of teams currently registered
+
+Other forms:
+toggle_homologated: submision causes a team's homologation status to toggle. POST data contains key-value
+                    pairs "type" = "toggle_homologated", "team_id" = the team's id
+gen_competition: form submission causes competition to be generated. POST data contains key-value pair
+                 "type" = "gen_competition"
+
+= In-competition Referee Interface = 
+Purpose: allow the referee to know which teams should be playing next. Allow the referree to enter and 
+         record scores for each match.
+
+Context:
+current_red_team, current_blue_team - teams currently playing
+current_scoreboard - list of team names and scores, in descending score order
+match_score - djangoform object for the match score model.

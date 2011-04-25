@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %} {{ block.super }} - Live {% endblock %}
+
+{% block content %} 
+<h1> LIVE EUROBOT SCORES! </h1>
+<p>
+{% if notices %}
+<ul>
+    {% for notice in notices %}
+    <li>{{ notice }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<img src="/images/ICRS-logo.png" width="25%" />
+{% endblock %}
+

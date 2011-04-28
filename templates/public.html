@@ -15,14 +15,24 @@
 <div id="match_board_parent"><div id="match_board">
     <div id="red_team">
         <h1>{{ red_team.name }}</h1>
-        <span class="score">{{ red_team.match_score }}</span>
+        <span class="score">{{ red_team.match_score.total }}</span>
     </div>
     <div id="blue_team">
         <h1>{{ blue_team.name }}</h1>
-        <span class="score">{{ blue_team.match_score }}</span>
+        <span class="total">{{ blue_team.match_score.total }}</span>
     </div>
     <div id="time">
-        {% now "jS F Y H:i"  %}
+       <script type="text/javascript">
+
+           var d = new Date();
+           d.setTime({% now "U"  %}000);
+           var time = d.getHours() + ":" +
+           d.getMinutes() + " " +
+           d.getDate() + "/" + 
+           d.getMonth() + "/" +
+           d.getFullYear();
+           document.write(time);
+       </script>  
     </div>
 </div></div>
 {% else %}

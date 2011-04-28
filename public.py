@@ -3,17 +3,23 @@ from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.ext.webapp import template
 
-class Team:
-    def __init__(self, name, score):
-        self.name = name
-        self.match_score = score
-
-from datetime import datetime
-
 test_context = {
         "competition_active": True,
-        "red_team": Team("ICRobot", 120),
-        "blue_team": Team("MDX", 20),
+        "red_team": {"name": "ICRobot",
+                     "match_score": {
+                            "total": 60,
+                            "normal": 40,
+                            "bonus": 20,
+                         }
+                     },
+        "blue_team": {"name": "MDX",
+                     "match_score": {
+                            "total": 20,
+                            "normal": 15,
+                            "bonus": 5,
+                         }
+                     },
+
         }
 
 class PublicPage(webapp.RequestHandler):

@@ -12,7 +12,7 @@
 {% endif %}
 
 {% if competition_active %}
-<div id="match_board_parent"><div id="match_board">
+<div id="match_board">
     <div id="red_team">
         <h1>{{ red_team.name }}</h1>
         <span class="score">{{ red_team.match_score.total }}</span>
@@ -34,7 +34,7 @@
            document.write(time);
        </script>  
     </div>
-</div></div>
+</div>
 {% else %}
     <h1>Sorry! The competition hasn't started yet!</h1>
 {% endif %}

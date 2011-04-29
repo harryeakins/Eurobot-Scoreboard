@@ -10,17 +10,15 @@ div#header {
 div#header h1 {
     text-align: center;
 }
+
 div#footer {
     background-color: #CCC;
     clear: both;
 }
 
-div#match_board_parent {
-    text-align: center;
-}
-
 div#match_board { 
-    display: inline-block; 
+    width: 420px;
+    margin: 0 auto;
 }
 
 div#red_team {
@@ -32,7 +30,7 @@ div#red_team {
 }
 
 div#blue_team {
-    background-color: blue;
+    background-color: #0077FF;
     text-align: left;
     padding-left: 10px;
     float: left;

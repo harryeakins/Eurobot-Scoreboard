@@ -27,6 +27,7 @@
            var d = new Date();
            d.setTime({% now "U"  %}000);
            var time = d.getHours() + ":" +
+           (d.getMinutes() < 10 ? '0' : '') +
            d.getMinutes() + " " +
            d.getDate() + "/" + 
            d.getMonth() + "/" +

@@ -23,7 +23,7 @@
     </div>
     <div id="time">
        <script type="text/javascript">
-
+       //<![CDATA[
            var d = new Date();
            d.setTime({% now "U"  %}000);
            var time = d.getHours() + ":" +
@@ -33,6 +33,7 @@
            (d.getMonth()+1) + "/" +
            d.getFullYear();
            document.write(time);
+       //]]>
        </script>  
     </div>
 </div>

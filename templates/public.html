@@ -30,7 +30,7 @@
            (d.getMinutes() < 10 ? '0' : '') +
            d.getMinutes() + " " +
            d.getDate() + "/" + 
-           d.getMonth() + "/" +
+           (d.getMonth()+1) + "/" +
            d.getFullYear();
            document.write(time);
        </script>  

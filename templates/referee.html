@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %} {{ block.super }} - Referee Interface {% endblock %}
+
+{% block content %} 
+
+{% if notices %}
+<ul class="notices">
+    {% for notice in notices %}
+    <li>{{ notice }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<div id="add_team_form">
+<form action="" method="post">
+<table>
+    <tr>
+        <th colspan="2">
+            Add Team
+        </th>
+    </tr>
+    <tr>
+        <td>
+            Name:
+        </td>
+        <td>
+            <input type="text" name="name" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Submit" />
+        </td>
+    </tr>
+</table>
+</form>
+</div>
+
+{% endblock %}
+
